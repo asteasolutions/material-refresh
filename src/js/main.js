@@ -34,6 +34,7 @@
     var verticalThreshold = 2;
     var maxRotateTime = 6000; //Max time to stop rotate
     var basePosY = 60;
+    var hasMoved = false;
 
     var onBegin = null;
     var onBtnBegin= null;
@@ -264,6 +265,8 @@
             return;
         }
 
+        hasMoved = true;
+
         thisTouch = e.touches[0];
 
         touchPos.x2 = thisTouch.pageX;
@@ -301,7 +304,10 @@
         if (touchPos.top > 0 || isShowLoading) {
             return;
         }
-        e.preventDefault();
+
+        if (hasMoved) {
+            e.preventDefault();
+        }
         
         if (touchCurrentY > basePosY - customNavTop + NUM_POS_MIN_Y) {
             // Should move over the min position
@@ -309,6 +315,8 @@
         } else {
             backToStart();
         }
+
+        hasMoved = false;
     }
     
     /**

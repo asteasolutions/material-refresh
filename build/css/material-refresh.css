@@ -6,7 +6,7 @@
   z-index: 10001;
   background-color: #fff;
   overflow: hidden;
-  border-radius: 999px;
+  border-radius: 999px /* hack android 2.3*/;
   box-shadow: 0 3px 8px 0 rgba(0,0,0,0.19), 0 6px 13px 0 rgba(0,0,0,0.24);
   -webkit-box-shadow: 0 3px 8px 0 rgba(0,0,0,0.19), 0 6px 13px 0 rgba(0,0,0,0.24);
 }
@@ -51,7 +51,7 @@
   border-width: 3px;
   border-style: solid;
   border-color: #000 #000 transparent;
-  border-radius: 999px;
+  border-radius: 999px /* hack android 2.3*/;
 }
 .mui-arrow-main {
   margin-top: 10px;
